@@ -152,3 +152,31 @@ body{
         padding: 3rem;
     }
 }
+
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        #menu-btn{
+            display: inline-block;
+        }
+
+        .navbar{
+            position: absolute;
+            top: 99%;left: 0;right: 0;
+            background: $black;
+
+            a{
+                display: block;
+                margin: 2rem;
+            }
+        }
+    }
+}
+
+@media(max-width:450px){
+    .header{
+        padding: 3rem;
+    }
+}
