@@ -25,6 +25,7 @@ $border:.2rem solid rgba(255,255,255,.3);
     font-size: $grapSize;
     line-height: 2;
     color: $light-color;
+    font-weight: bold;
 }
 
 @mixin grid($val){
@@ -54,10 +55,45 @@ html{
 }
 
 body{
-    background: url(../images/background.jpg);
+    background: url(../images/background.jpg) no-repeat;
+    background-size: cover;
     background-attachment: fixed;
     background-position: center;
     overflow-x: hidden;
+}
+
+section{
+    padding:3rem 9%;
+}
+
+.heading{
+    text-align: center;
+    margin-bottom: 3rem;
+
+    img{
+        width: 20rem
+    }
+
+    h3{
+        @include title-text(3rem);
+        margin-top: 1rem;
+    }
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    cursor: pointer;
+    color: $white;
+    border: $border;
+    background: no-repeat;
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+
+    &:hover{
+        color: $black;
+        background: $white;
+    }
 }
 
 .header{
@@ -145,11 +181,162 @@ body{
     }
 }
 
+.home{
+    margin-top: 7rem;
+    
+
+    .content{
+        max-width: 70rem;
+        text-align: center;
+        margin: 0 auto;
+
+        img{
+            width: 100%;
+        }
+
+        h3{
+            @include title-text(4rem);
+        }
+
+        p{
+            @include grap-text(1.7rem);
+            padding: 2rem 0;
+        }
+    }
+}
+
+.service{
+    @include grid(31rem);
+
+    .box{
+        text-align: center;
+        padding: 2rem;
+
+        i{
+            height: 7rem;
+            width: 7rem;
+            line-height: 7rem;
+            font-size: 2.5rem;
+            color: $black;
+            background: $yellow;
+            margin-bottom: 1rem;
+            border:.2rem solid rgb(1,1,1);
+            border-radius: 50%;
+        }
+
+        h3{
+            padding: 1rem 0;
+            @include title-text(2rem);
+        }
+
+        p{
+            @include grap-text(1.5rem);
+        }
+    }
+}
+
+.menu{
+    .box-container{
+        @include grid(31rem);
+
+        .box{
+            text-align: center;
+
+            &:hover img{
+                transform: translateY(1rem);
+            }
+
+            img{
+                height: 18rem;
+            }
+
+            .content{
+                padding: 1rem 0;
+
+                .stars{
+                    margin-bottom: 1rem;
+                    i{
+                        font-size: 1.7rem;
+                        color: $yellow;
+                    }  
+                }
+
+                h3{
+                    @include title-text(2rem);
+                }
+
+                .price{
+                    @include grap-text(2rem);
+                }
+            }
+        }
+    }
+}
+
+.about{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    .image{
+        flex: 1 1 40rem;
+        img{width:100% ;}
+    }
+    .content{
+        flex: 1 1 40rem;
+
+        .title{
+            @include title-text(2.5rem)
+        }
+
+        p{
+            @include grap-text(1.5rem);
+            padding: 2rem 0;
+        }
+
+        .icons{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+
+            h3{
+                flex: 1 1 16rem;
+                @include title-text(1.4rem);
+
+                i{
+                    padding-right: .5rem;
+                    color: $yellow;
+                }
+            }
+        }
+    }
+}
+
+.reviews{
+
+    .box-container{
+        @include grid(31rem);
+
+    }
+}
+
+
+
+
+
+
+
 
 // media quries
 @media(max-width:1200px){
+    section{
+    padding:3rem 2rem;
+}
     .header{
-        padding: 3rem;
+        padding:1.5rem 3rem;
     }
 }
 
@@ -158,6 +345,13 @@ body{
         font-size: 55%;
     }
     .header{
+        justify-content: flex-end;
+        gap: 2rem;
+
+        .logo{
+            transform: translateX(0);
+            left: 3rem;
+        }
         #menu-btn{
             display: inline-block;
         }
@@ -166,12 +360,27 @@ body{
             position: absolute;
             top: 99%;left: 0;right: 0;
             background: $black;
+            clip-path: polygon(0 0,100% 0,100% 0, 0 0);
+
+            &.active{
+                clip-path: polygon(0 0,100% 0,100% 100%, 0 100%);
+            }
 
             a{
                 display: block;
-                margin: 2rem;
+                margin:3rem 2rem;
+            }
+
+            .space{
+                display: none;
             }
         }
+    }
+}
+
+@media(max-width:768px){
+    .home .content h3{
+        font-size: 2.5rem;
     }
 }
 

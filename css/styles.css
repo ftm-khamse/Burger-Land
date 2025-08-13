@@ -29,10 +29,44 @@ html::-webkit-scrollbar-thumb {
 }
 
 body {
-  background: url(../images/background.jpg);
+  background: url(../images/background.jpg) no-repeat;
+  background-size: cover;
   background-attachment: fixed;
   background-position: center;
   overflow-x: hidden;
+}
+
+section {
+  padding: 3rem 9%;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.heading img {
+  width: 20rem;
+}
+.heading h3 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  cursor: pointer;
+  color: #fff;
+  border: 0.2rem solid rgba(255, 255, 255, 0.3);
+  background: no-repeat;
+  font-size: 1.7rem;
+  padding: 1rem 3rem;
+}
+.btn:hover {
+  color: #000;
+  background: #fff;
 }
 
 .header {
@@ -110,14 +144,169 @@ body {
   transform: rotate(180deg);
 }
 
+.home {
+  margin-top: 7rem;
+}
+.home .content {
+  max-width: 70rem;
+  text-align: center;
+  margin: 0 auto;
+}
+.home .content img {
+  width: 100%;
+}
+.home .content h3 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+.home .content p {
+  font-size: 1.7rem;
+  line-height: 2;
+  color: #aaa;
+  font-weight: bold;
+  padding: 2rem 0;
+}
+
+.service {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 2rem;
+}
+.service .box {
+  text-align: center;
+  padding: 2rem;
+}
+.service .box i {
+  height: 7rem;
+  width: 7rem;
+  line-height: 7rem;
+  font-size: 2.5rem;
+  color: #000;
+  background: #eacf4f;
+  margin-bottom: 1rem;
+  border: 0.2rem solid rgb(1, 1, 1);
+  border-radius: 50%;
+}
+.service .box h3 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+.service .box p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #aaa;
+  font-weight: bold;
+}
+
+.menu .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 2rem;
+}
+.menu .box-container .box {
+  text-align: center;
+}
+.menu .box-container .box:hover img {
+  transform: translateY(1rem);
+}
+.menu .box-container .box img {
+  height: 18rem;
+}
+.menu .box-container .box .content {
+  padding: 1rem 0;
+}
+.menu .box-container .box .content .stars {
+  margin-bottom: 1rem;
+}
+.menu .box-container .box .content .stars i {
+  font-size: 1.7rem;
+  color: #eacf4f;
+}
+.menu .box-container .box .content h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+.menu .box-container .box .content .price {
+  font-size: 2rem;
+  line-height: 2;
+  color: #aaa;
+  font-weight: bold;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.about .image {
+  flex: 1 1 40rem;
+}
+.about .image img {
+  width: 100%;
+}
+.about .content {
+  flex: 1 1 40rem;
+}
+.about .content .title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+.about .content p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #aaa;
+  font-weight: bold;
+  padding: 2rem 0;
+}
+.about .content .icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+.about .content .icons h3 {
+  flex: 1 1 16rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+.about .content .icons h3 i {
+  padding-right: 0.5rem;
+  color: #eacf4f;
+}
+
+.reviews .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 2rem;
+}
+
 @media (max-width: 1200px) {
+  section {
+    padding: 3rem 2rem;
+  }
   .header {
-    padding: 3rem;
+    padding: 1.5rem 3rem;
   }
 }
 @media (max-width: 991px) {
   html {
     font-size: 55%;
+  }
+  .header {
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+  .header .logo {
+    transform: translateX(0);
+    left: 3rem;
   }
   .header #menu-btn {
     display: inline-block;
@@ -128,10 +317,22 @@ body {
     left: 0;
     right: 0;
     background: #000;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   .header .navbar a {
     display: block;
-    margin: 2rem;
+    margin: 3rem 2rem;
+  }
+  .header .navbar .space {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .home .content h3 {
+    font-size: 2.5rem;
   }
 }
 @media (max-width: 450px) {
