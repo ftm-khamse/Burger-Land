@@ -320,6 +320,178 @@ section{
     .box-container{
         @include grid(31rem);
 
+        .box{
+            text-align: center;
+            padding: 2rem;
+
+            img{
+                height: 12rem;
+                width: 12rem;
+                border-radius: 50%;
+                margin-bottom: 1rem;
+            }
+
+            h3{
+                @include title-text(2rem);
+            }
+
+            p{
+                @include grap-text(1.5rem);
+                padding-top: 1rem 0;
+            }
+
+            .stars{
+                i{
+                    font-size: 1.7rem;
+                    color: $yellow;
+                    margin-top: 1rem;
+                }
+            }
+        }
+
+    }
+}
+
+.contact{
+
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+
+        .map{
+            flex:1 1 40rem;
+        }
+
+        .form{
+            flex:1 1 40rem;
+
+            .icons-container{
+                display: flex;
+                gap:2rem;
+                margin-bottom: 3rem;
+
+                .icons{
+                    flex:1 1 17rem;
+                    text-align: center;
+
+                    i{
+                        height: 6rem;
+                        width: 6rem;
+                        line-height: 6rem;
+                        border-radius: 50%;
+                        background: $yellow;
+                        color: $black;
+                        font-size: 2rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    h3{
+                        padding: 1rem 0;
+                        @include title-text(2rem);
+                    }
+
+                    p{
+                        @include grap-text(1.5rem);
+                    }
+                }
+            }
+
+            form{
+                text-align: center;
+
+                .box{
+                    padding: 1.2rem 1.4rem;
+                    font-size: 1.6rem;
+                    color: $white;
+                    background: none;
+                    border: $border;
+                    text-transform: none;
+                    width: 100%;
+                    margin-bottom: .7rem;
+
+                    &:focus{
+                        border-color: $yellow;
+                    }
+
+                }
+
+                textarea{
+                    height: 15rem;
+                    resize: none;
+                }
+            }
+        }
+    }
+}
+
+.blogs{
+    .box-container{
+        @include grid(31rem);
+
+        .box{
+            position: relative;
+            &:hover .image{
+                img{
+                    transform: scale(1.1);
+                }
+                .icons{
+                    transform: translateY(0);
+                }
+            }
+
+            .image{
+                height: 28rem;
+                overflow: hidden;
+                position: relative;
+
+                .icons{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 2rem;
+                    background: $black;
+                    position: absolute;
+                    bottom: 0; left: 0; right: 0;
+                    z-index: 10;
+                    transform: translateY(10rem);
+
+                    a{
+                        font-size: 1.5rem;
+                        color: $white;
+
+                        i{
+                            padding-right: .5rem;
+                            color: $yellow;
+                        }
+
+                        &:hover{
+                            color: $yellow;
+                        }
+                    }
+                }
+
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .content{
+                text-align: center;
+                padding: 2rem;
+
+                h3{
+                    @include title-text(2rem);
+                }
+
+                p{
+                    @include grap-text(1.5rem);
+                    padding: 1.5rem 0;
+                }
+            }
+        }
     }
 }
 
